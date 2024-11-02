@@ -18,6 +18,7 @@ if %var%==0 exit
 :show
 echo SERVICE USERNAME PASSWORD
 echo =================================================================================
+chcp 65001
 type passwords.txt
 pause
 exit
@@ -25,7 +26,8 @@ exit
 :add 
 set /P service= Enter service(if dont has enter '-'): 
 set /P username= Enter username: 
-set /P password= Enter password: 
+set /P password= Enter password:
+chcp 936
 echo %service% %username% %password% >> passwords.txt
 exit
 
